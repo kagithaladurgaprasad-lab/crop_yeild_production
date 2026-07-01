@@ -1,17 +1,14 @@
-import os
-import sys
-
-# ==========================================
-# 0. DEPLOYMENT CORE BACKEND OVERRIDES
-# ==========================================
-# Force Keras 3 standard fallback backend to look only for internal numpy arrays
-os.environ["KERAS_BACKEND"] = "numpy"
-
 import streamlit as st
 import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import time
+import os
+import sys
+
+# Native TensorFlow framework binding
+import tensorflow as tf
 
 # Safe check for joblib deployment protocols
 try:
@@ -82,18 +79,18 @@ st.markdown("""
 # ==========================================
 @st.cache_resource(show_spinner=False)
 def load_ml_artifacts():
-    """Loads and caches model and pipeline configuration objects safely via joblib."""
+    """Loads and caches model and pipeline configuration objects safely via joblib and tensorflow."""
     scaler_path = "y_scaler.pkl"
     if not os.path.exists(scaler_path) and os.path.exists("y_scaler - Copy.pkl"):
         scaler_path = "y_scaler - Copy.pkl"
         
     try:
-        from keras.models import load_model
-        
         # Load components with safe joblib deserialization
         preprocessor = joblib.load("preprocessor.pkl")
         y_scaler = joblib.load(scaler_path)
-        model = load_model("Crop_ann.keras")
+        
+        # Updated loading mechanism using explicit TensorFlow API configuration
+        model = tf.keras.models.load_model("Crop_ann.keras", compile=False)
         
         return preprocessor, y_scaler, model, None
     except Exception as e:
@@ -158,7 +155,7 @@ with st.sidebar:
         st.caption(f"Reason: {load_error}")
     else:
         st.success("ANN Core Engine Active")
-        st.caption("• Model Type: Keras Sequential")
+        st.caption("• Model Type: Keras Sequential via TF Backend")
         st.caption("• Dimensions: 811 Target Weights")
 
 # ==========================================
@@ -244,14 +241,10 @@ elif nav_option == "Yield Engine":
                         processed_vector = processed_vector.toarray()
                         
                     # 2. ANN Core Forward-Pass Configuration
-                    try:
-                        raw_prediction = model.predict(processed_vector, verbose=0)
-                        raw_val = float(raw_prediction[0][0])
-                    except Exception:
-                        # Safety fallback matrix weight initialization if structural model layers trace empty
-                        raw_val = 1.45
+                    raw_prediction = model.predict(processed_vector, verbose=0)
+                    raw_val = float(raw_prediction[0][0])
                     
-                    # 3. Safe Scaling Check (Bypasses scaler flaws gracefully)
+                    # 3. Safe Scaling Check (Bypasses scaler structural calculation anomalies)
                     try:
                         if hasattr(y_scaler, 'mean_') and y_scaler.mean_ is not None and getattr(y_scaler, 'scale_', None) is not None:
                             final_yield = y_scaler.inverse_transform(np.array([[raw_val]]))[0][0]
