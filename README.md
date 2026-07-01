@@ -13,7 +13,7 @@ An end-to-end **Deep Learning Crop Yield Prediction System** built using **Tenso
 
 # 🚀 Live Demo
 
-🔗 **Streamlit App:** *(Add your deployed app link here)*
+🔗 **Streamlit App:** *https://cropyeildappuction-jj5xxghadgbjexysyasxsa.streamlit.app/*
 
 ---
 
@@ -194,27 +194,13 @@ streamlit run app.py
 # 📷 Application Screenshots
 
 ## 🏠 Home Page
-```
+
 <img width="1768" height="820" alt="image" src="https://github.com/user-attachments/assets/e7385f6e-d03b-4635-85b1-3c2be666dfb5" />
 
-```
-
----
-
 ## 🌾 Prediction Page
-```
 <img width="1825" height="832" alt="image" src="https://github.com/user-attachments/assets/9b1697f2-8da3-40a6-b06f-5535c0b99b11" />
-
-```
 ## 📊 Analytics Dashboard
-
-
-```
 <img width="1538" height="688" alt="image" src="https://github.com/user-attachments/assets/0ea882b5-f1f8-4722-bb2d-b1e8c4ca44c8" />
-
-```
-
----
 
 # 💡 Future Enhancements
 
