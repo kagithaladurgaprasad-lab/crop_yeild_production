@@ -5,7 +5,16 @@ import plotly.express as px
 import plotly.graph_objects as go
 import time
 import os
+import os
+# Force Keras to utilize the lightweight backend (fixes TensorFlow cloud installation crashes)
+os.environ["KERAS_BACKEND"] = "numpy"
 
+import streamlit as st
+import numpy as np
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+# ... rest of your code remains exactly the same ...
 # Safe check for joblib deployment protocols
 try:
     import joblib
