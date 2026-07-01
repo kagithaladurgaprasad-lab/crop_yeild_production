@@ -194,31 +194,24 @@ streamlit run app.py
 # 📷 Application Screenshots
 
 ## 🏠 Home Page
-
-> Add screenshot here
-
 ```
-images/home.png
+<img width="1768" height="820" alt="image" src="https://github.com/user-attachments/assets/e7385f6e-d03b-4635-85b1-3c2be666dfb5" />
+
 ```
 
 ---
 
 ## 🌾 Prediction Page
-
-> Add screenshot here
+```
+<img width="1825" height="832" alt="image" src="https://github.com/user-attachments/assets/9b1697f2-8da3-40a6-b06f-5535c0b99b11" />
 
 ```
-images/prediction.png
-```
-
----
-
 ## 📊 Analytics Dashboard
 
-> Add screenshot here
 
 ```
-images/analytics.png
+<img width="1538" height="688" alt="image" src="https://github.com/user-attachments/assets/0ea882b5-f1f8-4722-bb2d-b1e8c4ca44c8" />
+
 ```
 
 ---
@@ -287,7 +280,7 @@ This project is licensed under the **MIT License**.
 
 # 👨‍💻 Author
 
-## K Chintu
+## K Durga Prasad
 
 **Data Science | Machine Learning | Deep Learning Enthusiast**
 
