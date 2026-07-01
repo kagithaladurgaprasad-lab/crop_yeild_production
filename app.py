@@ -1,12 +1,5 @@
-import streamlit as st
-import numpy as np
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-import time
 import os
-import os
-# Force Keras to utilize the lightweight backend (fixes TensorFlow cloud installation crashes)
+# CRITICAL FIX: Direct backend initialization for Keras 3 standalone matrix compatibility
 os.environ["KERAS_BACKEND"] = "numpy"
 
 import streamlit as st
@@ -14,7 +7,8 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-# ... rest of your code remains exactly the same ...
+import time
+
 # Safe check for joblib deployment protocols
 try:
     import joblib
@@ -97,7 +91,7 @@ def load_ml_artifacts():
         y_scaler = joblib.load(scaler_path)
         model = load_model("Crop_ann.keras")
         
-        # FIX: Force fit y_scaler if it was saved un-fitted to prevent NotFittedErrors later
+        # FORCE INTERCEPTOR FIX: Auto-fit dummy state parameters if scaler arrives empty
         if not hasattr(y_scaler, 'mean_') or y_scaler.mean_ is None:
             dummy_data = np.array([[1000.0], [5000.0], [10000.0], [50000.0]])
             y_scaler.fit(dummy_data)
@@ -149,7 +143,6 @@ with st.sidebar:
     
     st.markdown("---")
     st.markdown("### 🔗 Professional Connect")
-    # Clean, beautiful visual connection badges (replace URLs with your actual profile links)
     st.markdown("""
     <a class="sidebar-link" href="https://github.com/" target="_blank">
         🐙 GitHub Profile
@@ -251,11 +244,11 @@ elif nav_option == "Yield Engine":
                     if hasattr(processed_vector, "toarray"):
                         processed_vector = processed_vector.toarray()
                         
-                    # 2. ANN Core Forward-Pass Configuration
+                    # 2. ANN Core Forward-Pass
                     raw_prediction = model.predict(processed_vector, verbose=0)
                     raw_val = float(raw_prediction[0][0])
                     
-                    # 3. Robust Interceptor Scaling Check
+                    # 3. Robust Interceptor Fallback Check
                     try:
                         final_yield = y_scaler.inverse_transform(raw_prediction)[0][0]
                         if final_yield < 50.0:
