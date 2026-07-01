@@ -1,9 +1,9 @@
 streamlit>=1.35.0
-tensorflow==2.19.0
+tensorflow==2.20.0
+keras==3.14.1
 numpy
 pandas
 plotly>=5.18.0
 scikit-learn==1.5.0
-keras==3.10.0
 joblib
 h5py
