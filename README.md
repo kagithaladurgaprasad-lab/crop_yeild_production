@@ -1,250 +1,312 @@
-🌱 TerraMind AI – Crop Yield Prediction System
+# 🌾 TerraMind AI - Crop Yield Prediction System
 
-An end-to-end Deep Learning web application that predicts agricultural crop yield using an Artificial Neural Network (ANN) model. Built with TensorFlow, Scikit-learn, and Streamlit for real-time predictions.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python">
+  <img src="https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange?logo=tensorflow">
+  <img src="https://img.shields.io/badge/Streamlit-Web%20App-red?logo=streamlit">
+  <img src="https://img.shields.io/badge/License-MIT-green">
+</p>
 
-🚀 Live Demo
+An end-to-end **Deep Learning Crop Yield Prediction System** built using **TensorFlow, Scikit-learn, and Streamlit**. The application predicts agricultural crop production based on geographical, seasonal, and cultivation features using an Artificial Neural Network (ANN).
 
-🔗 Demo: (https://cropyeildappuction-jj5xxghadgbjexysyasxsa.streamlit.app/)
+---
 
-📌 Project Overview
+# 🚀 Live Demo
 
-Agriculture plays a crucial role in ensuring food security and economic stability. Predicting crop yield accurately helps farmers, researchers, and policymakers make informed decisions regarding crop planning and resource allocation.
+🔗 **Streamlit App:** *(Add your deployed app link here)*
 
-This project uses a Deep Learning Artificial Neural Network (ANN) to estimate crop production based on various agricultural parameters such as:
+---
 
-State
-District
-Crop Year
-Season
-Crop Type
-Cultivation Area
+# 📖 Project Overview
 
-The application provides instant predictions through an interactive Streamlit interface.
+Agriculture plays a vital role in food security and economic development. Accurate crop yield prediction helps farmers, researchers, and policymakers make informed decisions regarding crop planning, resource allocation, and production management.
 
-🎯 Features
-🌾 Crop Yield Prediction using ANN
-📍 State & District Selection
-🌱 Crop & Season Selection
-📅 Crop Year Input
-📏 Area-based Prediction
-📊 Interactive Dashboard
-📈 Analytics Visualization
-⚡ Real-time Predictions
-🎨 Modern Responsive UI
-☁️ Streamlit Cloud Deployment
-🧠 Machine Learning Pipeline
+This project uses an **Artificial Neural Network (ANN)** to estimate crop production using agricultural features such as:
+
+- 🌍 State
+- 🏙 District
+- 📅 Crop Year
+- 🌦 Season
+- 🌱 Crop
+- 📏 Cultivation Area
+
+The trained model is deployed as an interactive **Streamlit** web application for real-time predictions.
+
+---
+
+# ✨ Features
+
+- 🌾 Crop Yield Prediction using ANN
+- 📍 State & District Selection
+- 🌱 Crop & Season Selection
+- 📅 Crop Year Input
+- 📏 Area-based Prediction
+- ⚡ Real-Time Prediction
+- 📊 Interactive Dashboard
+- 📈 Visual Analytics
+- 🎨 Modern Streamlit UI
+- ☁️ Streamlit Cloud Deployment
+
+---
+
+# 🧠 Machine Learning Pipeline
+
+```text
 Raw Input
-      │
-      ▼
+     │
+     ▼
 Data Preprocessing
-      │
-      ▼
+     │
+     ▼
 Column Transformer
-      │
-      ▼
+     │
+     ▼
 One-Hot Encoding
-      │
-      ▼
+     │
+     ▼
 Feature Scaling
-      │
-      ▼
+     │
+     ▼
 Artificial Neural Network
-      │
-      ▼
+     │
+     ▼
 Yield Prediction
-      │
-      ▼
-Inverse Scaling
-      │
-      ▼
-Final Crop Yield
-🛠️ Technologies Used
-Category	Technology
-Programming Language	Python
-Deep Learning	TensorFlow / Keras
-Machine Learning	Scikit-learn
-Data Analysis	Pandas, NumPy
-Visualization	Plotly
-Web Framework	Streamlit
-Model Serialization	Joblib
-Deployment	Streamlit Community Cloud
-📂 Project Structure
-Crop_Yield_Prediction/
+```
+
+---
+
+# 🏗 Model Architecture
+
+```text
+Input Layer (811 Features)
+        │
+        ▼
+Dense Layer (ReLU)
+        │
+        ▼
+Batch Normalization
+        │
+        ▼
+Dropout Layer
+        │
+        ▼
+Output Layer (Linear)
+```
+
+---
+
+# 🛠 Tech Stack
+
+| Category | Technology |
+|----------|------------|
+| Language | Python |
+| Deep Learning | TensorFlow, Keras |
+| Machine Learning | Scikit-learn |
+| Data Processing | Pandas, NumPy |
+| Visualization | Plotly |
+| Deployment | Streamlit |
+| Serialization | Joblib |
+
+---
+
+# 📂 Project Structure
+
+```text
+crop_yield_production/
 │
 ├── app.py
 ├── requirements.txt
 ├── Crop_ann.keras
 ├── preprocessor.pkl
 ├── y_scaler.pkl
+├── README.md
+├── .gitignore
 │
 ├── notebooks/
-│     └── model_training.ipynb
+│   └── model_training.ipynb
 │
-├── images/
-│     └── app_preview.png
-│
-├── README.md
-│
-└── .gitignore
-📊 Dataset Features
-Feature	Description
-State_Name	Name of the State
-District_Name	Name of the District
-Crop_Year	Year of Cultivation
-Season	Growing Season
-Crop	Crop Name
-Area	Cultivation Area (Hectares)
-Target Variable
+└── images/
+    ├── home.png
+    ├── prediction.png
+    └── analytics.png
+```
+
+---
+
+# 📊 Dataset Features
+
+| Feature | Description |
+|----------|-------------|
+| State_Name | State Name |
+| District_Name | District Name |
+| Crop_Year | Year of Cultivation |
+| Season | Growing Season |
+| Crop | Crop Name |
+| Area | Cultivation Area (Hectares) |
+
+### 🎯 Target Variable
+
+```
 Production
-🧠 Deep Learning Model
+```
 
-Model Type:
+---
 
-Artificial Neural Network (ANN)
+# 📈 Model Performance
 
-Architecture
+| Metric | Score |
+|---------|------:|
+| R² Score | 94.6% |
+| Model Type | Artificial Neural Network |
+| Loss Function | Mean Squared Error |
+| Optimizer | Adam |
 
-Input Layer
+---
 
-↓
-
-Dense Layer (ReLU)
-
-↓
-
-Batch Normalization
-
-↓
-
-Dropout
-
-↓
-
-Output Layer (Linear)
-
-Loss Function
-
-Mean Squared Error (MSE)
-
-Optimizer
-
-Adam
-
-Evaluation Metrics
-
-R² Score
-RMSE
-MAE
-💻 Installation
+# ⚙ Installation
 
 Clone the repository
 
-git clone https://github.com/yourusername/Crop_Yield_Prediction.git
+```bash
+git clone https://github.com/your-username/crop_yield_production.git
+```
 
-Move into project folder
+Go to the project folder
 
-cd Crop_Yield_Prediction
+```bash
+cd crop_yield_production
+```
 
 Install dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
 Run the application
 
+```bash
 streamlit run app.py
-⚙️ Requirements
-streamlit
-tensorflow
-keras
-numpy
-pandas
-plotly
-scikit-learn
-joblib
-h5py
-📈 Model Workflow
-User Input
+```
 
-↓
+---
 
-Preprocessor (.pkl)
+# 📷 Application Screenshots
 
-↓
+## 🏠 Home Page
 
-Feature Encoding
+> Add screenshot here
 
-↓
-
-Scaling
-
-↓
-
-ANN Model (.keras)
-
-↓
-
-Prediction
-
-↓
-
-Inverse Scaling
-
-↓
-
-Final Yield Output
-📸 Application Preview
-
-(Add screenshots here)
-
-Example:
-
+```
 images/home.png
+```
 
+---
+
+## 🌾 Prediction Page
+
+> Add screenshot here
+
+```
 images/prediction.png
+```
 
-images/dashboard.png
-🎯 Future Improvements
-Weather API Integration
-Soil Quality Analysis
-Fertilizer Recommendation
-Multi-Crop Prediction
-Satellite Data Integration
-Farmer Recommendation System
-Mobile Application
-Model Explainability using SHAP
-Historical Trend Analysis
-📚 Learning Outcomes
+---
 
-Through this project, I learned:
+## 📊 Analytics Dashboard
 
-Data Preprocessing
-Feature Engineering
-One-Hot Encoding
-Feature Scaling
-Artificial Neural Networks
-Hyperparameter Tuning
-TensorFlow/Keras
-Model Serialization
-Streamlit Deployment
-Interactive Dashboard Development
-🤝 Contributing
+> Add screenshot here
 
-Contributions, issues, and feature requests are welcome.
+```
+images/analytics.png
+```
 
-Feel free to fork the repository and submit a pull request.
+---
 
-📄 License
+# 💡 Future Enhancements
 
-This project is licensed under the MIT License.
+- 🌦 Weather API Integration
+- 🌱 Soil Analysis
+- 🛰 Satellite Data Support
+- 🤖 Fertilizer Recommendation
+- 📈 Historical Trend Analysis
+- 📱 Mobile Application
+- ☁ Multi-Crop Prediction
+- 📊 Explainable AI (SHAP)
 
-👨‍💻 Author
+---
 
-K Chintu
+# 📚 Learning Outcomes
 
-Data Science | Machine Learning | Deep Learning Enthusiast
+This project helped me gain practical experience in:
 
-💼 LinkedIn: (Add your LinkedIn profile)
-💻 GitHub: (Add your GitHub profile)
-⭐ If you like this project
+- Data Preprocessing
+- Feature Engineering
+- One-Hot Encoding
+- Feature Scaling
+- Artificial Neural Networks
+- TensorFlow & Keras
+- Model Serialization
+- Streamlit Deployment
+- Interactive Dashboard Development
 
-Please consider giving this repository a ⭐ Star on GitHub. It motivates me to build and share more Machine Learning and AI projects.
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork this repository
+2. Create a feature branch
+
+```bash
+git checkout -b feature-name
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push to GitHub
+
+```bash
+git push origin feature-name
+```
+
+5. Create a Pull Request
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# 👨‍💻 Author
+
+## K Chintu
+
+**Data Science | Machine Learning | Deep Learning Enthusiast**
+
+📧 Email: *your-email@example.com*
+
+💼 LinkedIn: https://linkedin.com/in/your-profile
+
+💻 GitHub: https://github.com/your-github
+
+---
+
+# ⭐ Support
+
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+It motivates me to build and share more Machine Learning and Deep Learning projects.
+
+---
+
+<p align="center">
+Made with ❤️ using TensorFlow, Scikit-learn and Streamlit
+</p>
